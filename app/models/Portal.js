@@ -15,15 +15,16 @@ export class Portal {
 
   get portalsIconTemplate() {
     return `
-  <div class="col-4">
-  <button onclick="app.PortalController.setActivePortal('${this.name}')" class="w-100 btn btn-outline-light p-2">
-    
-    <img height="200px" width="200px" class="fs-2" src="${this.imgUrl}"></img>
-    <div class="fw-bold">${this.name}</div>
-  </button>
-</div>
-`
+    <div class="col-4">
+      <div onclick="app.PortalController.setActivePortal('${this.name}')">
+        <img class="w-100 rounded rounded-2 border border-2 border-warning" src="${this.imgUrl}"></img>
+      <div class="text-warning text-center fw-bold">${this.name}</div>
+    </div>
+  </div>
+  `
   }
+  // <button class="selector-button" onclick="app.PortalController.setActivePortal('${this.name}')" class="btn rounded rounded-2 btn-outline-light p-2">
+
 
   get activeCard() {
     return `
