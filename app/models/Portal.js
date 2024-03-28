@@ -17,8 +17,8 @@ export class Portal {
     return `
     <div class="col-4">
       <div onclick="app.PortalController.setActivePortal('${this.name}')">
-        <img class="w-100 rounded rounded-2 border border-2 border-warning" src="${this.imgUrl}"></img>
-      <div class="text-warning text-center fw-bold">${this.name}</div>
+        <img class="w-100 m-1 rounded rounded-2 border border-2" src="${this.imgUrl}"></img>
+      <div class=" mb-2 pink-dark text-center fw-bold">${this.name}</div>
     </div>
   </div>
   `
@@ -32,9 +32,22 @@ export class Portal {
       <img src="${this.imgUrl}" alt="" class="w-100 rounded rounded-1">
       <div class="card-body">
         <h2 class="text-center">${this.name}</h2>
+        <p class="text-wrap text-center">Pizza Portal beams you the pizza of your dreams</p>
       </div>
-      card will display here
     </div>
+    `
+  }
+
+  get buyButtonContent() {
+    return `
+    <button class="btn bg-blue m-1 w-100" onclick="app.PortalController.buySpecificPortal('${this.name}')">Buy
+    This</button>
+    `
+  }
+
+  static get inactiveBuyButton() {
+    return `
+    <button class="btn m-1 w-100" disabled>Select Portal to Purchase</button>
     `
   }
 
@@ -44,7 +57,7 @@ export class Portal {
       <img src="./assets/img/pizza-portal-ring.png" alt="" class="w-100 rounded rounded-1">
       <div class="card-body">
         <h2 class="text-center">Could be Anything</h2>
-        <p>Pizza Portal beams you the pizza of your dreams</p>
+        <p class="text-wrap text-center">Pizza Portal beams you the pizza of your dreams</p>
       </div>
     </div>
     `

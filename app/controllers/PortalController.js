@@ -18,6 +18,9 @@ export class PortalController {
     AppState.on('activePortal', this.drawActivePortal)
     AppState.on('myPortals', this.drawMyPortals)
     portalService.loadMyPortals()
+    this.setBuyButtonArg()
+
+
 
 
 
@@ -49,7 +52,7 @@ export class PortalController {
 
   drawMoney() {
     const money = AppState.money
-    setText(('money'), `$${money.toFixed(2)}`)
+    setText('money', `$${money.toFixed(2)}`)
   }
   // #endregion money
 
@@ -58,6 +61,19 @@ export class PortalController {
   setActivePortal(selectedPortal) {
     console.log('🍕🔮');
     portalService.setActivePortal(selectedPortal)
+    this.setBuyButtonArg()
+  }
+
+
+  setBuyButtonArg() {
+    const activePortal = AppState.activePortal
+    if (activePortal != null) {
+      let buyButtonContent = activePortal.buyButtonContent
+      setHTML('buySpecificButton', buyButtonContent)
+    }
+    else {
+      setHTML('buySpecificButton', Portal.inactiveBuyButton)
+    }
   }
   // #endregion set
 
@@ -72,7 +88,7 @@ export class PortalController {
   drawMyPortals() {
     const myPortals = AppState.myPortals
     let myPortalsContent = ''
-    myPortals.forEach(portal => myPortalsContent += myPortals)
+    myPortals.forEach(portal => myPortalsContent += portal.portalsIconTemplate)
     setHTML('my-portals', myPortalsContent)
   }
 

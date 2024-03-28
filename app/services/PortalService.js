@@ -27,6 +27,7 @@ class PortalService {
       AppState.money -= 1
       AppState.myPortals.unshift(specificPortal)
       console.log('bought specific portal', specificPortal);
+      this.saveMyPortals()
     }
     else {
       console.log(`didn't buy`);

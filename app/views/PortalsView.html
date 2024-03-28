@@ -1,41 +1,47 @@
-<section class="row">
-  <!-- buttons and active card -->
-  <div class="col-4">
-    <!-- addMoney button -->
-    <button class="btn btn-success m-1" onclick="app.PortalController.addMoney()"><span
-        id="money">+CREDITS</span></button>
+<section class="container-fluid">
+  <div class="row">
+    <!-- buttons and active card -->
+    <div class="col-4">
+      <div class="row">
+        <!-- addMoney button -->
+        <button class="btn bg-pink m-1 w-100" onclick="app.PortalController.addMoney()"><span
+            id="money">+CREDITS</span></button>
 
-    <!-- buySpecific button -->
-    <button class="btn btn-primary m-1" onclick="app.PortalController.buySpecificPortal(`${this.name}`)">Jump
-      In</span></button>
+        <!-- buySpecific button -->
+        <div id="buySpecificButton">
 
-    <!-- buyRandom button -->
-    <button class="btn btn-primary w-100 m-1" onclick="app.PortalController.buyRandomPortal()"><span id="">Roll the
-        Dice</span></button>
+        </div>
 
-
-    <div id="active-portal" class="card shadow portal-card p-2">
-      <!-- <img width="250px" height="250px" src="${this.imgUrl}" alt="" class="card-img">
-      <div class="card-body">
-        <h2 class="text-center">Pizza Portal</h2>
       </div>
-      card will display here -->
+
+      <!-- buyRandom button -->
+      <button class="btn bg-gold w-100 p-2 m-1" onclick="app.PortalController.buyRandomPortal()"><span id="">Roll
+          the
+          Dice & Buy a Slice</span></button>
+
+
+      <div id="active-portal" class="portal-card p-2">
+      </div>
+
     </div>
-
+    <div class="col-8 bg-blue-dark">
+      <!-- display card buttons -->
+      <section id="portal-icons" class="row justify-content-around p-3 bg-blue-dark"></section>
+    </div>
   </div>
-  <div class="col-8 bg-body-secondary">
-    <!-- display card buttons -->
-    <section id="portal-icons" class="row justify-content-center p-3 bg-dark"></section>
-  </div>
-
 
   </div>
 
 </section>
 
+<section class="container-fluid justify-content-around p-3 bg-dark">
+  <h2 class="text-center text-light">My Collection</h2>
+  <div id="my-portals" class="row">
 
-<section class="row justify-content-around">
-  <!-- <button class="btn btn-success col-4" onclick="app.PortalController.addMoney()"><span id="money">$0.00</span></button>
+  </div>
+
+  <section class="row justify-content-around">
+    <!-- <button class="btn btn-success col-4" onclick="app.PortalController.addMoney()"><span id="money">$0.00</span></button>
   <button class="btn btn-primary col-4" onclick="app.PortalController.buyRandomPortal()"><span id="active-portal">Jump
       In</span></button> -->
-</section>
+  </section>

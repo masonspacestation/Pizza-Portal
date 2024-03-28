@@ -1,6 +1,73 @@
 /* BASIC STYLES HERE */
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: var(--cheese)
+}
 
+
+:root {
+  --gold: #eaac0f;
+  --cheese: #e6cc8c;
+  --pink: #ff00ff;
+  --pink-dark: #ba318f;
+  --blue: #00ffff;
+  --blue-dark: #22226d;
+}
 
 #portal-icons:hover {
   cursor: pointer;
+}
+
+.navbar {
+  background-color: #edb94a;
+}
+
+
+
+.gold {
+  color: var(--gold)
+}
+
+.bg-gold {
+  background-color: var(--gold)
+}
+
+.cheese {
+  color: var(--cheese)
+}
+
+.bg-cheese {
+  background-color: var(--cheese)
+}
+
+.pink {
+  color: var(--pink)
+}
+
+.bg-pink {
+  background-color: var(--pink)
+}
+
+.pink-dark {
+  color: var(--pink-dark)
+}
+
+.bg-pink-dark {
+  background-color: var(--pink-dark)
+}
+
+.blue {
+  color: var(--blue)
+}
+
+.bg-blue {
+  background-color: var(--blue)
+}
+
+.blue-dark {
+  color: var(--blue-dark)
+}
+
+.bg-blue-dark {
+  background-color: var(--blue-dark)
 }
