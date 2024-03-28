@@ -29,11 +29,23 @@ export class Portal {
   get activeCard() {
     return `
     <div class="card shadow portal-card p-2">
-      <img width="250px" height="250px" src="${this.imgUrl}" alt="" class="card-img">
+      <img src="${this.imgUrl}" alt="" class="w-100 rounded rounded-1">
       <div class="card-body">
         <h2 class="text-center">${this.name}</h2>
       </div>
       card will display here
+    </div>
+    `
+  }
+
+  static get cardSilhouette() {
+    return `
+    <div class="card shadow portal-card p-2">
+      <img src="./assets/img/pizza-portal-ring.png" alt="" class="w-100 rounded rounded-1">
+      <div class="card-body">
+        <h2 class="text-center">Could be Anything</h2>
+        <p>Pizza Portal beams you the pizza of your dreams</p>
+      </div>
     </div>
     `
   }

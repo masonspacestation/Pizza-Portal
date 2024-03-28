@@ -37,8 +37,10 @@ class ObservableAppState extends EventEmitter {
 
   ]
 
+  /**@type {Portal} */
+  activePortal = null
 
-
+  /** @type {Portal[]} */
   myPortals = []
 
 

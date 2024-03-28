@@ -8,54 +8,37 @@ export class PortalController {
   constructor() {
     console.log('🍕');
     this.drawPortalIcons()
+    this.drawActivePortal()
 
     // this.setActivePortal()
-    // this.drawActiveIcons()
 
     // this.setActivePortal()
     AppState.on('money', () => console.log('money has changed', AppState.money))
     AppState.on('money', this.drawMoney)
+    AppState.on('activePortal', this.drawActivePortal)
+    AppState.on('myPortals', this.drawMyPortals)
+    portalService.loadMyPortals()
 
 
 
 
   }
 
-  // drawActivePortal(portalName) {
-  //   // let activePortal = AppState.portals.find(portal => portal.name == portalName)
-  //   console.log('🔮');
-  // }
 
-
+  // #region buy
 
   buyRandomPortal() {
-    // let portalToBuy = AppState.portals.find(portal => portal.name == portalToBuy)
     portalService.buyRandomPortal()
   }
-
-
-
-  drawPortalIcons() {
-    const portals = AppState.portals
-    let iconsContent = ''
-    portals.forEach(portal => iconsContent += portal.portalsIconTemplate)
-    setHTML('portal-icons', iconsContent)
-  }
-
-  setActivePortal(selectedPortal) {
-    console.log('🍕🔮');
-    let activePortal = AppState.portals.find(portal => portal.name == selectedPortal)
-    portalService.setActivePortal(activePortal)
-    // this.drawActivePortal()
-    console.log(activePortal);
-  }
-
 
   buySpecificPortal(portalName) {
     console.log('🎯', portalName);
     portalService.buySpecificPortal(portalName)
 
   }
+  // #endregion buy
+
+  // #region money
 
   addMoney() {
     portalService.addMoney()
@@ -68,6 +51,43 @@ export class PortalController {
     const money = AppState.money
     setText(('money'), `$${money.toFixed(2)}`)
   }
+  // #endregion money
+
+  // #region set
+
+  setActivePortal(selectedPortal) {
+    console.log('🍕🔮');
+    portalService.setActivePortal(selectedPortal)
+  }
+  // #endregion set
+
+  // #region draw
+  drawPortalIcons() {
+    const portals = AppState.portals
+    let iconsContent = ''
+    portals.forEach(portal => iconsContent += portal.portalsIconTemplate)
+    setHTML('portal-icons', iconsContent)
+  }
+
+  drawMyPortals() {
+    const myPortals = AppState.myPortals
+    let myPortalsContent = ''
+    myPortals.forEach(portal => myPortalsContent += myPortals)
+    setHTML('my-portals', myPortalsContent)
+  }
+
+  drawActivePortal() {
+    const activePortal = AppState.activePortal
+    console.log('controller draw', activePortal);
+    if (activePortal != null) {
+      setHTML('active-portal', activePortal.activeCard)
+    }
+    else {
+      setHTML('active-portal', Portal.cardSilhouette)
+    }
+  }
+
+  // #endregion draw
 
 
 
@@ -75,5 +95,7 @@ export class PortalController {
 
 
 
-
+  test() {
+    console.log('you can do that');
+  }
 }

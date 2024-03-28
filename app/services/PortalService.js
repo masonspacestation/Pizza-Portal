@@ -3,14 +3,13 @@ import { Portal } from "../models/Portal.js";
 import { loadState, saveState } from "../utils/Store.js";
 
 class PortalService {
-  setActivePortal(activePortal) {
-    console.log('At your service', activePortal);
-  }
 
 
   addMoney() {
     AppState.money += .5
   }
+
+  //#region buy
 
   buyRandomPortal() {
     if (AppState.money >= 1) {
@@ -18,6 +17,7 @@ class PortalService {
       AppState.money -= 1
       AppState.myPortals.unshift(randomPortal)
       console.log('bought random portal', randomPortal);
+      this.saveMyPortals()
     }
   }
 
@@ -33,6 +33,22 @@ class PortalService {
     }
   }
 
+  // #endregion buy
+
+  setActivePortal(portalName) {
+    const selectedPortal = AppState.portals.find(portal => portal.name == portalName)
+    console.log('At your service', portalName);
+    AppState.activePortal = selectedPortal
+    console.log('service 2', selectedPortal);
+  }
+
+  saveMyPortals() {
+    saveState('my-portals,', AppState.myPortals)
+  }
+
+  loadMyPortals() {
+    const myPortals = loadState('my-portals', [Portal])
+  }
 
 
 
