@@ -44,11 +44,12 @@ class PortalService {
   }
 
   saveMyPortals() {
-    saveState('my-portals,', AppState.myPortals)
+    saveState('myPortals,', AppState.myPortals)
   }
 
   loadMyPortals() {
-    const myPortals = loadState('my-portals', [Portal])
+    const loadedPortals = loadState('myPortals', [Portal])
+    AppState.myPortals = loadedPortals
   }
 
 

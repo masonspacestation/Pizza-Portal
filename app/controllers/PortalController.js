@@ -17,7 +17,6 @@ export class PortalController {
     AppState.on('money', this.drawMoney)
     AppState.on('activePortal', this.drawActivePortal)
     AppState.on('myPortals', this.drawMyPortals)
-    portalService.loadMyPortals()
     this.setBuyButtonArg()
 
 

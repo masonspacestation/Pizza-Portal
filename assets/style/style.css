@@ -22,7 +22,11 @@ body {
   background-color: #edb94a;
 }
 
-
+.card>img {
+  margin: auto;
+  margin-top: 5dvh;
+  margin-bottom`: 5dvh;
+}
 
 .gold {
   color: var(--gold)
