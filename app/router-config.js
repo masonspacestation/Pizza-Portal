@@ -8,7 +8,7 @@ export const router = new Router([
   {
     path: '',
     controllers: [PortalController],
-    view: '/app/views/PortalsView.html'
+    view: '/app/views/VMPortalsView.html'
     // view: /*html*/`
     // <div class="bg-white p-3">
     //   <div class="card-body">

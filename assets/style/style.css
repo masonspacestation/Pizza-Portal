@@ -25,7 +25,7 @@ body {
 .card>img {
   margin: auto;
   margin-top: 5dvh;
-  margin-bottom`: 5dvh;
+  margin-bottom: 5dvh;
 }
 
 .gold {
@@ -74,4 +74,18 @@ body {
 
 .bg-blue-dark {
   background-color: var(--blue-dark)
+}
+
+.selection-key {
+  height: 80%;
+  aspect-ratio: 1/1;
+  position: relative;
+  background: linear-gradient(-45deg, #ffffff1b, #ffffff4b);
+
+  p {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    transform: scale(150%);
+  }
 }
