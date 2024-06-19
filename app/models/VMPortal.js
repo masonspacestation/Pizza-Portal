@@ -1,6 +1,6 @@
 
 
-export class Portal {
+export class VMPortal {
 
   constructor(data) {
     // this.id = generateID()
@@ -17,8 +17,7 @@ export class Portal {
     return `
     <div class="col-4">
       <div onclick="app.PortalController.setActivePortal('${this.name}')">
-        <img class="w-100 m-1 rounded rounded-2 border border-2" src="${this.imgUrl}"></img>
-      <div class=" mb-2 pink-dark text-center fw-bold">${this.name}</div>
+        <img class="w-100 m-1 rounded rounded-2 border border-2 mb-4" src="${this.imgUrl}"></img>
     </div>
   </div>
   `
@@ -28,9 +27,9 @@ export class Portal {
 
   get activeCard() {
     return `
-    <div class="card shadow portal-card p-2">
-      <img src="${this.imgUrl}" alt="" class="w-100 rounded rounded-1">
-      <div class="card-body">
+    <div class="card bg-dark shadow portal-card p-2">
+      <img src="${this.imgUrl}" alt="" class="w-75 rounded rounded-1">
+      <div class="card-body text-light">
         <h2 class="text-center">${this.name}</h2>
         <p class="text-wrap text-center">Pizza Portal beams you the pizza of your dreams</p>
       </div>
@@ -40,29 +39,29 @@ export class Portal {
 
   get buyButtonContent() {
     return `
-    <button class="btn bg-blue m-1 w-75" onclick="app.PortalController.buySpecificPortal('${this.name}')">Buy
+    <button class="btn btn-success" onclick="app.PortalController.buySpecificPortal('${this.name}')">Buy
     This</button>
     `
   }
 
   static get inactiveBuyButton() {
     return `
-    <button class="btn m-1 w-75" disabled>Select Portal to Purchase</button>
+    <button class="btn" disabled>Select Portal to Purchase</button>
     `
   }
 
   static get cardSilhouette() {
     return `
-    <div class="card shadow portal-card p-2">
+    <div class="card bg-dark shadow portal-card p-2">
       <img src="./assets/img/pizza-portal-ring.png" alt="" class="w-75 rounded rounded-1">
-      <div class="card-body">
-        <h2 class="text-center">Could be Anything</h2>
-        <p class="text-wrap text-center">Pizza Portal beams you the pizza of your dreams</p>
       </div>
-    </div>
-    `
+      `
   }
 
+  // <div class="card-body">
+  //   <h2 class="text-center">Could be Anything</h2>
+  //   <p class="text-wrap text-center">Pizza Portal beams you the pizza of your dreams</p>
+  // </div>
 
 
 

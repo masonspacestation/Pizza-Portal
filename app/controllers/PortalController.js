@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { Portal } from "../models/Portal.js";
+import { VMPortal } from "../models/VMPortal.js";
 import { portalService } from "../services/PortalService.js";
 import { setHTML, setText } from "../utils/Writer.js"
 
@@ -64,6 +65,11 @@ export class PortalController {
   }
 
 
+  async unsetActivePortal() {
+    await portalService.unSetActivePortal()
+    this.setBuyButtonArg()
+  }
+
   setBuyButtonArg() {
     const activePortal = AppState.activePortal
     if (activePortal != null) {
@@ -71,7 +77,7 @@ export class PortalController {
       setHTML('buySpecificButton', buyButtonContent)
     }
     else {
-      setHTML('buySpecificButton', Portal.inactiveBuyButton)
+      setHTML('buySpecificButton', VMPortal.inactiveBuyButton)
     }
   }
   // #endregion set
@@ -98,7 +104,7 @@ export class PortalController {
       setHTML('active-portal', activePortal.activeCard)
     }
     else {
-      setHTML('active-portal', Portal.cardSilhouette)
+      setHTML('active-portal', VMPortal.cardSilhouette)
     }
   }
 

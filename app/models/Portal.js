@@ -38,18 +38,18 @@ export class Portal {
     `
   }
 
-  get buyButtonContent() {
-    return `
-    <button class="btn bg-blue m-1 w-75" onclick="app.PortalController.buySpecificPortal('${this.name}')">Buy
-    This</button>
-    `
-  }
+  // get buyButtonContent() {
+  //   return `
+  //   <button class="btn bg-blue m-1 w-75" onclick="app.PortalController.buySpecificPortal('${this.name}')">Buy
+  //   This</button>
+  //   `
+  // }
 
-  static get inactiveBuyButton() {
-    return `
-    <button class="btn m-1 w-75" disabled>Select Portal to Purchase</button>
-    `
-  }
+  // static get inactiveBuyButton() {
+  //   return `
+  //   <button class="btn m-1 w-75" disabled>Select Portal to Purchase</button>
+  //   `
+  // }
 
   static get cardSilhouette() {
     return `

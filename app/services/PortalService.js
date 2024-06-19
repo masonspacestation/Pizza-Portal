@@ -1,8 +1,12 @@
 import { AppState } from "../AppState.js";
 import { Portal } from "../models/Portal.js";
+import { VMPortal } from "../models/VMPortal.js";
 import { loadState, saveState } from "../utils/Store.js";
 
 class PortalService {
+  unSetActivePortal() {
+    AppState.activePortal = null
+  }
 
 
   addMoney() {
@@ -48,7 +52,7 @@ class PortalService {
   }
 
   loadMyPortals() {
-    const loadedPortals = loadState('myPortals', [Portal])
+    const loadedPortals = loadState('myPortals', [VMPortal])
     AppState.myPortals = loadedPortals
   }
 

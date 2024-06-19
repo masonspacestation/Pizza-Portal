@@ -81,11 +81,16 @@ body {
   aspect-ratio: 1/1;
   position: relative;
   background: linear-gradient(-45deg, #ffffff1b, #ffffff4b);
+}
 
-  p {
-    position: absolute;
-    top: 25%;
-    left: 40%;
-    transform: scale(150%);
-  }
+.glass {
+  border: 1px rgba(255, 255, 255, 0.3) solid;
+  background: linear-gradient(-45deg, #6ed1e31b, #bddfea4b);
+
+}
+
+.wood {
+  background-color: #522600;
+  background-image: url("https://www.transparenttextures.com/patterns/retina-wood.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
