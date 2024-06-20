@@ -4,6 +4,14 @@ body {
   background-color: var(--cheese)
 }
 
+.font-digital {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--digi-green);
+}
+
 
 :root {
   --gold: #eaac0f;
@@ -12,6 +20,7 @@ body {
   --pink-dark: #ba318f;
   --blue: #00ffff;
   --blue-dark: #22226d;
+  --digi-green: #04da5d;
 }
 
 #portal-icons:hover {
@@ -72,20 +81,41 @@ body {
   color: var(--blue-dark)
 }
 
+.digi-green {
+  color: var(--digi-green)
+}
+
+.bg-digi-green {
+  background-color: var(--digi-green)
+}
+
+
+.border-digi-green {
+  border: 2px solid var(--digi-green)
+}
+
 .bg-blue-dark {
   background-color: var(--blue-dark)
 }
+
 
 .selection-key {
   height: 80%;
   aspect-ratio: 1/1;
   position: relative;
+  background: linear-gradient(-45deg, #ffffff57, #ffffff1b);
+}
+
+.bg-grad {
+  height: 100dvh;
   background: linear-gradient(-45deg, #ffffff1b, #ffffff4b);
+  background-color: #111927;
 }
 
 .glass {
   border: 1px rgba(255, 255, 255, 0.3) solid;
-  background: linear-gradient(-45deg, #6ed1e31b, #bddfea4b);
+  background: linear-gradient(-45deg, #6ed1e346 60%, #edf3f47d, #bddfea7d 80%);
+  background-color: #111927;
 
 }
 

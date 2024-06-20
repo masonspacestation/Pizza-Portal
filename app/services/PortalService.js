@@ -2,6 +2,7 @@ import { AppState } from "../AppState.js";
 import { Portal } from "../models/Portal.js";
 import { VMPortal } from "../models/VMPortal.js";
 import { loadState, saveState } from "../utils/Store.js";
+import { setHTML } from "../utils/Writer.js";
 
 class PortalService {
   unSetActivePortal() {
@@ -34,6 +35,7 @@ class PortalService {
       this.saveMyPortals()
     }
     else {
+      setHTML('money', 'Plz Add Credits')
       console.log(`didn't buy`);
     }
   }

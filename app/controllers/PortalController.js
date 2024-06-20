@@ -10,34 +10,30 @@ export class PortalController {
     console.log('🍕');
     this.drawPortalIcons()
     this.drawActivePortal()
-
-    // this.setActivePortal()
-
-    // this.setActivePortal()
-    AppState.on('money', () => console.log('money has changed', AppState.money))
     AppState.on('money', this.drawMoney)
     AppState.on('activePortal', this.drawActivePortal)
     AppState.on('myPortals', this.drawMyPortals)
     this.setBuyButtonArg()
-
-
-
-
-
-
   }
 
 
   // #region buy
 
-  buyRandomPortal() {
-    portalService.buyRandomPortal()
-  }
+  // async buyRandomPortal() {
+  //   try {
+  //     await portalService.buyRandomPortal()
+  //   } catch (error) {
+  //     setHTML('money', 'Insufficient Credits')
+  //   }
+  // }
 
   buySpecificPortal(portalName) {
-    console.log('🎯', portalName);
+    // try {
     portalService.buySpecificPortal(portalName)
-
+    // }
+    // catch (error) {
+    //   setHTML('money', 'Insufficient Credits')
+    // }
   }
   // #endregion buy
 
@@ -45,8 +41,6 @@ export class PortalController {
 
   addMoney() {
     portalService.addMoney()
-
-    console.log(AppState.money);
     this.drawMoney()
   }
 
@@ -68,6 +62,7 @@ export class PortalController {
   async unsetActivePortal() {
     await portalService.unSetActivePortal()
     this.setBuyButtonArg()
+    setText('money', `$${AppState.money.toFixed(2)}`)
   }
 
   setBuyButtonArg() {

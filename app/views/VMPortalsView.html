@@ -1,7 +1,7 @@
 <section class="container-fluid">
   <div class="row mt-3 justify-content-center">
     <!-- buttons and active card -->
-    <div class="col-4">
+    <div class="col-4 d-none d-md-block">
 
 
       <div id="active-portal" class="portal-card p-2">
@@ -15,7 +15,6 @@
           </div>
         </div>
         <div class="w-50">
-
           <button onclick="app.PortalController.unsetActivePortal()" class="btn btn-danger">Cancel</button>
         </div>
         <!-- buyRandom button -->
@@ -26,46 +25,102 @@
         </div> -->
       </div>
     </div>
+    <div class="col-12 col-md-6">
+      <div class="row wood rounded rounded-3 align-items-start justify-content-center justify-content-md-start">
+        <div class="col-12 col-md-5 d-flex flex-column justify-content-center px-3 m-2 p-1">
+          <div class="bg-grad h-auto pb-4 rounded rounded-2">
+            <div class="row mt-4 mb-2 mx-auto w-75 border-digi-green rounded rounded-2 bg-dark py-2">
+              <p id="money" class="fs-2 text-center font-digital m-auto">$0.00</p>
+            </div>
+            <div class="row">
+              <button class="btn bg-digi-green mx-auto mt-2 mb-4 w-75"
+                onclick="app.PortalController.addMoney()"><span>+CREDITS</span></button>
+            </div>
 
-    <div class="col-3">
-      <div class="row justify-content-around">
-        <div
-          class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
-          <div
-            class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
-            <p class="fs-1 fw-bold text-center text-light m-auto">1</p>
+            <!-- SECTION selection keys -->
+            <div class="row justify-content-evenly text-light mb-3">
+              <div
+                class="selection-key outer col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key inner rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto">1</p>
+                </div>
+              </div>
+              <div
+                class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto">2</p>
+                </div>
+              </div>
+              <div
+                class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto">3</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-evenly text-light mb-3">
+              <div
+                class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto">A</p>
+                </div>
+              </div>
+              <div
+                class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto">B</p>
+                </div>
+              </div>
+              <div
+                class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto">C</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-evenly text-light mb-3">
+              <div
+                class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto"><i class="mdi mdi-close-thick"></i></p>
+                </div>
+              </div>
+              <div
+                class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto"><i class="mdi mdi-arrow-left-thick"></i></p>
+                </div>
+              </div>
+              <div
+                class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
+                <div
+                  class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
+                  <p class="fs-1 fw-bold text-center m-auto"><i class="mdi mdi-check-bold"></i></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
-          <div
-            class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
-            <p class="fs-1 fw-bold text-center text-light m-auto">2</p>
+
+        <div class="col-12 col-md-6 p-3 pb-5 rounded rounded-2 h-auto">
+          <div class="glass rounded rounded-2">
+            <section id="portal-icons" class="row justify-content-around m-2 p-1">
+              <!-- <p class="fw-bold">A2</p> -->
+            </section>
           </div>
         </div>
-        <div
-          class="selection-key col-3 bg-dark rounded rounded-4 d-flex flex-column align-content-center justify-content-center">
-          <div
-            class="selection-key rounded rounded-3 mx-auto border-light-subtle border-top border-end d-flex align-items-center justify-content-center">
-            <p class="fs-1 fw-bold text-center text-light m-auto">3</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <button class="btn bg-pink m-1 w-75" onclick="app.PortalController.addMoney()"><span
-            id="money">+CREDITS</span></button>
       </div>
     </div>
-
-    <div class="col-4 p-3 pb-5 wood rounded rounded-2">
-      <div class="glass rounded rounded-2">
-        <section id="portal-icons" class="row justify-content-around m-2 p-1">
-          <!-- <p class="fw-bold">A2</p> -->
-        </section>
-      </div>
-    </div>
-
-
   </div>
 
 </section>
